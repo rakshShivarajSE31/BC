@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Charity</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Charity Application</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Charity Address</th>
+                  <th scope="col">Total Donations</th>
+                </tr>
+              </thead>
+              <tbody id="charityResults">
+              </tbody>
+            </table>
+            <hr/>
+            <div id ="isUser">
+              <form onSubmit="App.doDonate(); return false;">
+                <div class="form-group">
+                  <label for="charitySelect">Select Candidate</label>
+                  <select class="form-control" id="charitySelect">
+                  </select>
+                </div>
+                <div classs= "getmoney">
+                  <p>Donating from your wallet</p>
+                  Enter Amount <input id = "getmoney" type="text"/><br/><br/>
+                </div>
+                <button type="submit" class="btn btn-primary">Donate</button>
+                <hr />
+              </form>
+          </div>
+            <p id="accountAddress" class="text-center"></p>
+            <br/>
+            <span id="showrewards">Total Rewards: <p id="userBalance"></p></span>
+            <span id="sayThanks">
+              Total money left: <p id="tokenBalance"></p>
+            <button onclick="App.sayThanks();"   class="btn btn-primary" id="3">Say Thanks</button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
